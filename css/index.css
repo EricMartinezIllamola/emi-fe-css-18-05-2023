@@ -287,30 +287,6 @@ margin-top: 20px;
     box-shadow: 1px 1px 1px rgb(70, 1, 1) inset;
 }
 
-#pantalla-top-izq-top-2 {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 1px white inset;
-    transform: rotate(135deg);
-}
-
-#pantalla-top-izq-top-3 {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 1px white inset;
-    transform: rotate(135deg);
-}
-
-#pantalla-top-izq-top-4{
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 1.2px white inset;
-    transform: rotate(135deg);
-}
-
 #pantalla-top-izq-bot {
     font-size: 9px;
     color: white;
