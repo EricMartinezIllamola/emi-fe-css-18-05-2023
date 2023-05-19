@@ -16,7 +16,7 @@ body {
     height: 500px;
     border-radius: 20px;
     border: 1px solid black;
-    box-shadow: 5px 5px 10px 5px rgb(87, 87, 2);
+    box-shadow: 5px 5px 10px 5px inset rgb(87, 87, 2);
 }
 
 #pantalla {
@@ -34,11 +34,23 @@ body {
 }
 
 #logo-letras {
-    width: 70px;
+    width: 80px;
     height: 20px;
-    border: 1px solid black;
+    border: 1px double black;
     border-radius: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#logo-letras-R {
+    width: 5px;
+    height: 5px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    font-size: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #control {
@@ -57,6 +69,7 @@ body {
 #control-izq-caja {
     height: 60px;
     width: 60px;
+    margin-right: 25px;
     position: relative;
 }
 
@@ -66,6 +79,7 @@ body {
     background-color: black;
     position: absolute;
     left: 20px;
+    border-radius: 7px;
 }
 
 #control-izq-caja-horizontal {
@@ -74,6 +88,7 @@ body {
     background-color: black;
     position: absolute;
     bottom: 20px;
+    border-radius: 7px;
 }
 
 #control-izq-caja-up {
@@ -81,10 +96,11 @@ body {
     width: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 10px solid grey;
+    border-bottom: 10px solid rgb(54, 51, 51);
     position: absolute;
     left: 25px;
     top: 5px;
+
 }
 
 #control-izq-caja-down {
@@ -92,7 +108,7 @@ body {
     width: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 10px solid grey;
+    border-top: 10px solid rgb(54, 51, 51);
     position: absolute;
     left: 25px;
     top: 45px;
@@ -103,7 +119,7 @@ body {
     width: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-right: 10px solid grey;
+    border-right: 10px solid rgb(54, 51, 51);
     position: absolute;
     left: 5px;
     top: 25px;
@@ -114,7 +130,7 @@ body {
     width: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-left: 10px solid grey;
+    border-left: 10px solid rgb(54, 51, 51);
     position: absolute;
     left: 45px;
     top: 25px;
@@ -123,7 +139,7 @@ body {
 #control-izq-caja-mid {
     height: 15px;
     width: 15px;
-    background-color: grey;
+    background-color: rgb(54, 51, 51);
     border-radius: 50%;
     position: absolute;
     left: 22.5px;
@@ -147,6 +163,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 3px 3px 5px rgb(109, 109, 1) inset;
 }
 
 #control-der-B {
@@ -156,6 +173,26 @@ margin-top: 20px;
 #control-der-A {
     margin-left: 20px;
     margin-bottom: 20px;
+}
+
+#control-der-A:hover, #control-der-B:hover, #control-izq-caja-mid:hover, #audio-izq-1-botton:hover, #audio-izq-2-botton:hover {
+    background-color: rgb(228, 215, 215);
+}
+
+#control-izq-caja-up:hover {
+    border-bottom-color: rgb(228, 215, 215);
+}
+
+#control-izq-caja-down:hover {
+    border-top-color: rgb(228, 215, 215);
+}
+
+#control-izq-caja-left:hover {
+    border-right-color: rgb(228, 215, 215);
+}
+
+#control-izq-caja-right:hover {
+    border-left-color: rgb(228, 215, 215);
 }
 
 #audio {
@@ -181,6 +218,7 @@ margin-top: 20px;
     height: 8px;
     background-color: black;
     border-radius: 50%;
+    box-shadow: 1px 3px 3px rgb(109, 109, 1) inset;
 }
 
 #audio-izq-2 {
@@ -193,14 +231,34 @@ margin-top: 20px;
     height: 8px;
     background-color: black;
     border-radius: 50%;
+    box-shadow: 1px 3px 3px rgb(109, 109, 1) inset;
+}
+
+#audio-izq-1-text, #audio-izq-2-text {
+    font-size: 10px;
 }
 
 #audio-der {
     width: 30%;
     height: 100%;
-    background-color: blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
+.negro {
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.transparente {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px black inset;
+}
 
 #pantalla-top {
     width: 100%;
@@ -209,20 +267,63 @@ margin-top: 20px;
 }
 
 #pantalla-top-izq {
-    background-color: red;
+    width: 30px;
+    height: 30px;
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+#pantalla-top-izq-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#pantalla-top-izq-top-1 {
+    background-color: rgb(184, 4, 4);
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin-left: 5%;
-    margin-top: 30%;
+    box-shadow: 1px 1px 1px rgb(70, 1, 1) inset;
+}
+
+#pantalla-top-izq-top-2 {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px white inset;
+    transform: rotate(135deg);
+}
+
+#pantalla-top-izq-top-3 {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px white inset;
+    transform: rotate(135deg);
+}
+
+#pantalla-top-izq-top-4{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1.2px white inset;
+    transform: rotate(135deg);
+}
+
+#pantalla-top-izq-bot {
+    font-size: 9px;
+    color: white;
 }
 
 #pantalla-top-der {
-    background-color: gray;
-    width: 160px;
-    height: 160px;
-    margin-top: 10%;
-    margin-left: 12%;
+    background-image: url(../img/mario-super.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 170px;
+    height: 170px;
+    margin-top: 30px;
+    margin-left: 10px;
 }
 
 #pantalla-bot {
@@ -230,7 +331,7 @@ margin-top: 20px;
     height: 20%;
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items:center;
 }
 
 #pantalla-bot-letras-1 {
